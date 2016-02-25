@@ -4,7 +4,7 @@
 
 Name:           %{?scl_prefix}%{pkg_name}
 Version:        1.1
-Release:        6.12%{?dist}
+Release:        6.13%{?dist}
 # Maven-shared defines maven-downloader version as 1.2
 Epoch:          1
 Summary:        Maven artifact downloader
@@ -19,7 +19,7 @@ Source1:        http://www.apache.org/licenses/LICENSE-2.0.txt
 BuildArch:      noarch
 
 BuildRequires:  %{?scl_prefix_java_common}junit
-BuildRequires:  %{?scl_prefix_java_common}maven-local
+BuildRequires:  %{?scl_prefix}maven-local
 BuildRequires:  %{?scl_prefix}maven-shared
 BuildRequires:  %{?scl_prefix}plexus-containers-component-metadata
 
@@ -72,6 +72,9 @@ set -e -x
 
 
 %changelog
+* Mon Feb 08 2016 Michal Srb <msrb@redhat.com> - 1:1.1-6.13
+- Fix BR on maven-local & co.
+
 * Mon Jan 11 2016 Michal Srb <msrb@redhat.com> - 1:1.1-6.12
 - maven33 rebuild #2
 
